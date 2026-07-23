@@ -19,6 +19,7 @@ def run_checks() -> dict[str, object]:
     from anki.decks import FilteredDeckConfig
     from anki_safe_collection_operations import (
         EventRef,
+        OperationError,
         Target,
         fail_cards_now,
         make_cards_available,
@@ -137,6 +138,33 @@ def run_checks() -> dict[str, object]:
             }
         )
 
+    rollback_note, rollback_id = add_card("rollback")
+    rollback_reps = int(col.get_card(rollback_id).reps)
+    rollback_revlogs = int(
+        col.db.scalar("select count() from revlog where cid = ?", rollback_id)
+    )
+    real_set_config = col.set_config
+
+    def fail_cursor_write(*_args: object, **_kwargs: object) -> None:
+        raise RuntimeError("deliberate probe failure")
+
+    col.set_config = fail_cursor_write
+    rollback_rejected = False
+    try:
+        fail_cards_now(
+            col,
+            [Target(rollback_id, rollback_note.guid)],
+            event=EventRef("workbench-rollback", 1, "rollback-probe"),
+        )
+    except OperationError:
+        rollback_rejected = True
+    finally:
+        col.set_config = real_set_config
+    rollback_after = col.get_card(rollback_id)
+    rollback_revlogs_after = int(
+        col.db.scalar("select count() from revlog where cid = ?", rollback_id)
+    )
+
     checks = [
         {
             "name": "native Again changes reps once",
@@ -174,6 +202,12 @@ def run_checks() -> dict[str, object]:
             "name": "rescheduling filtered card receives native Again",
             "ok": filtered_result.rescheduling_filtered == (filtered_id,)
             and int(col.get_card(filtered_id).reps) == filtered_reps + 1,
+        },
+        {
+            "name": "late failure rolls back review and cursor together",
+            "ok": rollback_rejected
+            and int(rollback_after.reps) == rollback_reps
+            and rollback_revlogs_after == rollback_revlogs,
         },
         *hidden_checks,
     ]
