@@ -8,10 +8,16 @@ license = "MIT"
 authors = [{ name = "Elvis Sik" }]
 classifiers = [
   "Development Status :: 3 - Alpha",
-  "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
   "Topic :: Education",
 ]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["safe_collection_operations"]
 
 [tool.uv]
 exclude-newer = "7 days"
