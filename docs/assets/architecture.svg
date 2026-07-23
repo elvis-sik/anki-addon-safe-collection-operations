@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Safe collection operations architecture</title>
+  <desc id="desc">Three adapters share one guarded operation registry and Anki-native implementation.</desc>
+  <defs>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0ea5e9"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity=".16"/></filter>
+  </defs>
+  <rect width="1100" height="430" rx="26" fill="#f8fafc"/>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" text-anchor="middle">
+    <g filter="url(#shadow)">
+      <rect x="60" y="58" width="260" height="92" rx="18" fill="#fff" stroke="#cbd5e1"/>
+      <rect x="420" y="58" width="260" height="92" rx="18" fill="#fff" stroke="#cbd5e1"/>
+      <rect x="780" y="58" width="260" height="92" rx="18" fill="#fff" stroke="#cbd5e1"/>
+    </g>
+    <text x="190" y="94" font-size="20" font-weight="700" fill="#0f172a">Other add-ons</text><text x="190" y="122" font-size="15" fill="#64748b">stable Python API</text>
+    <text x="550" y="94" font-size="20" font-weight="700" fill="#0f172a">Local agents</text><text x="550" y="122" font-size="15" fill="#64748b">AnkiConnect adapter</text>
+    <text x="910" y="94" font-size="20" font-weight="700" fill="#0f172a">MCP clients</text><text x="910" y="122" font-size="15" fill="#64748b">opt-in localhost adapter</text>
+    <path d="M190 150 V205 M550 150 V205 M910 150 V205" stroke="#94a3b8" stroke-width="3"/>
+    <path d="M190 205 H910" stroke="#94a3b8" stroke-width="3"/>
+    <path d="M550 205 V238" stroke="#94a3b8" stroke-width="3"/>
+    <rect x="250" y="238" width="600" height="92" rx="22" fill="url(#core)" filter="url(#shadow)"/>
+    <text x="550" y="278" font-size="24" font-weight="750" fill="#fff">Guarded operation registry</text>
+    <text x="550" y="307" font-size="16" fill="#e0f2fe">preflight • native scheduler • postconditions • idempotency</text>
+    <path d="M550 330 V365" stroke="#64748b" stroke-width="3"/>
+    <rect x="380" y="365" width="340" height="48" rx="18" fill="#0f172a"/>
+    <text x="550" y="396" font-size="18" font-weight="650" fill="#f8fafc">Open Anki collection</text>
+  </g>
+</svg>
+

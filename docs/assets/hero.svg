@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Safe Collection Operations for Anki Add-ons</title>
+  <desc id="desc">A bridge joining add-ons and agents to Anki's native scheduler.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#172554"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="bridge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
+  <circle cx="1080" cy="60" r="170" fill="#4f46e5" opacity=".18"/>
+  <circle cx="80" cy="390" r="210" fill="#0284c7" opacity=".15"/>
+  <g transform="translate(82 86)">
+    <path d="M34 114 C84 24 194 24 244 114" fill="none" stroke="url(#bridge)" stroke-width="18" stroke-linecap="round" filter="url(#glow)"/>
+    <path d="M34 114 H244" stroke="#e0f2fe" stroke-width="8" stroke-linecap="round"/>
+    <path d="M70 114 V164 M208 114 V164" stroke="#7dd3fc" stroke-width="10" stroke-linecap="round"/>
+    <rect x="42" y="164" width="194" height="20" rx="10" fill="#c4b5fd"/>
+    <path d="M139 8 151 35 180 38 158 57 164 86 139 71 114 86 120 57 98 38 127 35Z" fill="#fff"/>
+  </g>
+  <g fill="#f8fafc" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="390" y="140" font-size="51" font-weight="750" letter-spacing="-1.5">Safe Collection Operations</text>
+    <text x="392" y="194" font-size="31" font-weight="520" fill="#bae6fd">for Anki Add-ons</text>
+    <text x="392" y="259" font-size="21" fill="#cbd5e1">Guarded native scheduling • stable add-on API • optional agent transports</text>
+  </g>
+  <g transform="translate(392 302)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">
+    <rect width="530" height="46" rx="23" fill="#020617" opacity=".72" stroke="#475569"/>
+    <circle cx="25" cy="23" r="6" fill="#34d399"/>
+    <text x="43" y="29" fill="#e2e8f0">native operations, explicit state, no scheduling SQL</text>
+  </g>
+</svg>
+

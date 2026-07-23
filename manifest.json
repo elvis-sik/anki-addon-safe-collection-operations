@@ -1,0 +1,12 @@
+{
+  "package": "anki_addon_safe_collection_operations",
+  "name": "Safe Collection Operations for Anki Add-ons",
+  "mod": 1784769687,
+  "min_point_version": 250700,
+  "max_point_version": 250904,
+  "author": "Elvis Sik",
+  "human_version": "0.1.0",
+  "description": "Guarded native collection operations for Anki add-ons and local agent integrations.",
+  "homepage": "https://github.com/elvis-sik/anki-addon-safe-collection-operations"
+}
+
