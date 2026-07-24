@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/elvis-sik/anki-addon-safe-collection-operations/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/elvis-sik/anki-addon-safe-collection-operations/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/ritornello-labs/anki-addon-safe-collection-operations/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/ritornello-labs/anki-addon-safe-collection-operations/actions/workflows/ci.yml/badge.svg"></a>
   <img alt="Anki 25.07+" src="https://img.shields.io/badge/Anki-25.07%2B-4a7bd0">
   <img alt="Runtime dependencies: zero" src="https://img.shields.io/badge/runtime_dependencies-zero-20a36a">
   <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-8b5cf6"></a>

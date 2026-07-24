@@ -7,6 +7,6 @@
   "author": "Elvis Sik",
   "human_version": "0.1.0",
   "description": "Guarded native collection operations for Anki add-ons and local agent integrations.",
-  "homepage": "https://github.com/elvis-sik/anki-addon-safe-collection-operations"
+  "homepage": "https://github.com/ritornello-labs/anki-addon-safe-collection-operations"
 }
 
